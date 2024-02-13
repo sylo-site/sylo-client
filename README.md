@@ -1,4 +1,4 @@
-# Sylo Website
+![Sylo Logo](path/to/sylo_logo.png)
 
 [![Node.js](https://img.shields.io/badge/Node.js-^14.0.0-blue.svg?style=flat-square)](https://nodejs.org/)
 [![React](https://img.shields.io/badge/React-^17.0.0-blue.svg?style=flat-square)](https://reactjs.org/)
