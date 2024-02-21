@@ -1,11 +1,9 @@
-import styloLogo from "./stylo-logo.png"
+import { RouterProvider } from "react-router-dom";
+import { router } from "./route";
 function App() {
-  return (
-  <div>
-    <img alt="stylo-logo" src={styloLogo} ></img>
-    <h2>Coming Soon</h2>
-  </div>
-  );
+  return <section className="App">
+    <RouterProvider router={router} />
+    </section>;
 }
 
 export default App;
