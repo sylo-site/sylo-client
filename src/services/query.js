@@ -10,13 +10,21 @@ export const getListUserQuery = gql`query ListUsers {
 
   export const createUserMutation = gql`mutation CreateUser($email: String!, $name: String!, $password: String!) {
     createUser(email: $email, name: $name, password: $password) {
+      id
       email
-      password
+      name
     }
   }`
 
-  export const getUserToken = gql`query Query($email: String!, $password: String!) {
-    getUserToken(email: $email, password: $password)
+  export const getUserToken = gql`query GetUserToken($email: String!, $password: String!) {
+    getUserToken(email: $email, password: $password) {
+      token
+      user {
+        id
+        email
+        name
+      }
+    }
   }`
 
   /* export const getuser = gql`` */

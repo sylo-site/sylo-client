@@ -34,6 +34,8 @@ export const Login = ({props}) => {
   //Redirect
   useEffect(()=>{
     if(data?.getUserToken && !error){
+      console.log(data?.getUserToken?.user,"here")
+      localStorage.setItem("user", JSON.stringify(data?.getUserToken?.user))
       navigate("/dashboard")
     }else{
       console.log(loading,"error")
@@ -58,6 +60,7 @@ export const Login = ({props}) => {
         </div>
         <div>
         <h4>New User, <Link to={"/signup"} >Signup</Link></h4>
+        <br />
         </div>
         
         <button type="submit">Login</button>

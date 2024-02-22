@@ -1,10 +1,17 @@
+import { useEffect, useState } from "react";
 import { styloLogo } from "../../assets";
 export const CommonHeader = ({ user = "Baba" }) => {
+  const [userData,setUserData] = useState(null)
   const bulletItems = [
-    "Verified Properties",
-    "24x7 Assistance",
-    "Best Price Guaranteed",
+    "✅ Verified Properties",
+    "✅ 24x7 Assistance",
+    "✅ Best Price Guaranteed",
   ];
+
+  useEffect(()=>{
+    const user = JSON.parse(localStorage.getItem("user"))
+    setUserData((prev)=>user)
+  },[])
 
   return (
     <>
@@ -38,7 +45,7 @@ export const CommonHeader = ({ user = "Baba" }) => {
         </div>
 
         <div className="user-profile">
-          <button>Welcome {user}</button>
+          <button>Welcome {userData?.name}</button>
         </div>
       </header>
     </>

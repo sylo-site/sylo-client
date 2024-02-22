@@ -15,7 +15,7 @@ export const useCreateUserMutation = ()=>{
 export const useGetUserToken = (variables)=>{
     const { loading, error, data } =  useQuery(getUserToken,variables);
     if(data){
-        sessionStorage.setItem("access-token", data?.getUserToken)
+        sessionStorage.setItem("access-token", data?.getUserToken?.token)
     }
     return {loading,error,data}
 }
