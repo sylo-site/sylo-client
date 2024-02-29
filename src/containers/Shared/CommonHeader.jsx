@@ -45,7 +45,7 @@ export const CommonHeader = ({ user = "Baba" }) => {
         </div>
 
         <div className="user-profile">
-          <button>Welcome {userData?.name}</button>
+          <button> <span><i class="fa-regular fa-user"></i></span>  Welcome {userData?.name}</button>
         </div>
       </header>
     </>

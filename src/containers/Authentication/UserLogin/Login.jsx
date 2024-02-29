@@ -34,7 +34,6 @@ export const Login = ({props}) => {
   //Redirect
   useEffect(()=>{
     if(data?.getUserToken && !error){
-      console.log(data?.getUserToken?.user,"here")
       localStorage.setItem("user", JSON.stringify(data?.getUserToken?.user))
       navigate("/dashboard")
     }else{
@@ -44,6 +43,14 @@ export const Login = ({props}) => {
       }
     }
   },[error,data,navigate])
+
+  //If Logged in go to dashboard
+  useEffect(()=>{
+    const token = sessionStorage.getItem("access-token");
+    if(token){
+      navigate("/dashboard")
+    }
+  },[])
 
 
   return (

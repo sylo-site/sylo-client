@@ -1,8 +1,10 @@
-import { RouterProvider } from "react-router-dom";
-import { router } from "./route";
+import { useEffect } from "react";
+import { Routes } from "react-router-dom";
+import {UserRoutes} from "./route";
 function App() {
+
   return <section className="App">
-    <RouterProvider router={router} />
+    <UserRoutes/>
     </section>;
 }
 
